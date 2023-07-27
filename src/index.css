@@ -1,0 +1,45 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --rad: .7rem;
+  --dur: .3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: cadetblue;
+  --color-primary: #2f5cff;
+  --font-fam: 'Lato', sans-serif;
+  --height: 2.5rem;
+  --btn-width: 5rem;
+}
+
+
+body, h1, p, ul{
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background: var(--color-primary);
+  padding: 15px;
+}
+
+.navbar h1, a {
+  color: var(--color-light);
+}
+
+.navbar ul{
+  list-style-type: none;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
