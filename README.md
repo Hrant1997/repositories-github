@@ -1,3 +1,21 @@
+# Installation 
+```
+   npm install
+
+   create .env from .env.example
+   then add your github access token `VITE_REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN`
+```
+
+## Start development version
+```
+   npm run dev
+```
+
+## Build for production 
+```
+   npm run build
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
