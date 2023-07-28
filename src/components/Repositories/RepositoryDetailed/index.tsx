@@ -1,4 +1,4 @@
-import { RepositoryDetailed as ReposytoryType } from "../../../types";
+import { RepositoryDetailed as ReposytoryType } from "@/types";
 import classes from './styles.module.scss';
 import classNames from "classnames";
 
@@ -23,11 +23,11 @@ const RepositoryDetailed: React.FC<RepositoriyProps> = ({ repository }) => {
               <p>Last commit date:</p>
               <p>{repository.lastCommitDate}</p>
             </div>
-            <img src={repository.owner?.avatarUrl} alt={repository.owner?.login} />
-            <a href={repository.owner?.url}> {repository.owner?.login}</a>
+            <img src={repository.owner.avatarUrl} alt={repository.owner.login} />
+            <a href={repository.owner.url}> {repository.owner.login}</a>
             <p className={classes.description}>Languages:</p>
             {
-              repository.languages?.map(language => (
+              repository.languages.map(language => (
                 <li key={language.name}>{language.name}</li>
               ))
             }

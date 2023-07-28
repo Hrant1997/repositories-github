@@ -1,12 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Language, Node, QueryParams, Repository, RepositoryDetailed } from '../../types'
-import { axiosGithubGraphQL } from "../../graphql";
-import { GET_MY_REPOSITORIES, GET_REPOSITORIES, GET_REPOSITORY_BY_ID } from "../../graphql/queries";
-import axios from "axios";
 import { useDispatch } from "react-redux";
-import store from "../store";
-import { RootState } from './../../types'
-
+import { axiosGithubGraphQL } from "@/graphql";
+import { Language, Node, QueryParams, Repository, RepositoryDetailed, RootState } from '@/types'
+import { GET_MY_REPOSITORIES, GET_REPOSITORIES, GET_REPOSITORY_BY_ID } from "@/graphql/queries";
+import axios from "axios";
+import store from "@/redux/store";
 
 export type RepoistoryToShow = {
   isLoading: boolean;
@@ -147,13 +145,11 @@ const repositorySlice = createSlice({
 
     builder.addCase(searchRepositoryById.pending, (state) => {
       state.repoToShow.data = {} as RepositoryDetailed;
-      state.repoToShow.error = true;
-      state.repoToShow.isLoading = false
+      state.repoToShow.error = false;
+      state.repoToShow.isLoading = true
     })
 
     builder.addCase(searchRepositoryById.fulfilled, (state, action) => {
-      console.log(action);
-      
       state.repoToShow.data = {
         description: action.payload.data.node.description,
         languages: action.payload.data.node.languages.nodes.map((node: Language) => node),
@@ -163,7 +159,7 @@ const repositorySlice = createSlice({
         url: action.payload.data.node.url,
         owner: action.payload.data.node.owner
       }
-      state.repoToShow.error = true;
+      state.repoToShow.error = false;
       state.repoToShow.isLoading = false
     })
 

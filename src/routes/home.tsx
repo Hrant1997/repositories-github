@@ -1,11 +1,11 @@
-import { RootState } from '../types.ts';
-import Repositories from '../components/Repositories';
 import { useSelector } from 'react-redux';
-import Pagination from '../components/Pagination';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import Loader from '../components/Loader/index.tsx';
-import SearchForm from '../components/SearchForm/index.tsx';
+import { RootState } from '@/types.ts';
+import Repositories from '@/components/Repositories';
+import SearchForm from '@/components/SearchForm/index.tsx';
+import Pagination from '@/components/Pagination';
+import Loader from '@/components/Loader/index.tsx';
 import classes from './styles.module.scss';
 
 const PAGE_SIZE = 10;
@@ -25,7 +25,6 @@ export default function Home() {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     setQueryParams((prev) => {
-      console.log(prev);
       const newParams: { page: string, q?: string } = { page: String(page) }
       const query = prev.get('q')
 

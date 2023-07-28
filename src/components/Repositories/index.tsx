@@ -1,4 +1,4 @@
-import { Repository as RepositoryType } from "../../types";
+import { Repository as RepositoryType } from "@/types";
 import Repository from "./Repository";
 import classes from './styles.module.scss';
 

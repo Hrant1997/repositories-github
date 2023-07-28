@@ -1,6 +1,6 @@
 import { LoaderFunctionArgs } from "react-router-dom";
-import { searchRepositories } from "../../redux/repositories";
-import { AppThunk} from "../../types";
+import { searchRepositories } from "@/redux/repositories";
+import { AppThunk} from "@/types";
 import { Dispatch } from "react";
 
 

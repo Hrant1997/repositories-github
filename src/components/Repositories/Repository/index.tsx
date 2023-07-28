@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Repository as ReposytoryType } from "../../../types";
+import { Repository as ReposytoryType } from "@/types";
 import classes from './styles.module.scss';
 import classNames from "classnames";
 
